@@ -7,8 +7,11 @@ from endpoint import *
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(Locations, '/locations')  # 'entry point: URL/locations'
-api.add_resource(ClientApp, '/clientapp')
+# API endpoints. Example:
+# http://URL:port/device?deviceId=2&visitorCount=100
+api.add_resource(RegisterBusiness, '/registerbusiness')  # 'entry point: URL/locations'
+api.add_resource(Device, '/device')
+api.add_resource(Customer, '/customer')
 
 if __name__ == '__main__':
     app.run()
